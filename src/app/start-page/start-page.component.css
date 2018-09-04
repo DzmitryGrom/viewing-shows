@@ -11,7 +11,7 @@
     z-index: 3;
     padding: 11px;
 }
-.start-page__form {
+.start-page__inner {
     width: 50%;
     max-width: 500px;
     position: relative;

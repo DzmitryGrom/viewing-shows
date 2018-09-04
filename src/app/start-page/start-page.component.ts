@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ViewServiceService } from "../service/view-service.service";
 
 @Component({
   selector: 'app-start-page',
@@ -6,10 +8,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./start-page.component.css']
 })
 export class StartPageComponent implements OnInit {
+  search: String = '';
+  films = [];
 
-  constructor() { }
+  constructor(private router: Router, private viewServiceService: ViewServiceService) { }
 
-  ngOnInit() {
+  ngOnInit () {
+    this.viewServiceService.getFilms().subscribe( films => {
+      this.films = films;
+      this.films.forEach(item => {
+        console.log(item.show);
+      })
+    });
+
   }
 
+  onClick () {
+
+    this.nextRoute();
+  }
+
+  onEnter(e) {
+    this.nextRoute();
+  }
+
+  nextRoute () {
+    this.router.navigateByUrl('/list');
+  }
 }

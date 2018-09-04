@@ -1,4 +1,8 @@
-<form class="start-page__form">
-  <input class="start-page__input" type="seach" placeholder="Вводите запрос в поле поиск">
-  <span class="start-page__fa fa fa-search"></span>
-</form>
+<div class="start-page__inner">
+  <input class="start-page__input" type="seach" 
+    placeholder="Вводите запрос в поле поиск"  
+    [(ngModel)]="search" #ctrl="ngModel"
+    (keyup.enter)="onEnter($event)">
+  <span (click)="onClick()" class="start-page__fa fa fa-search"></span>
+
+</div>

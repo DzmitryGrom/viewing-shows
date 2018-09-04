@@ -1,0 +1,51 @@
+:host {
+    display: block;
+    align-items: stretch;
+    height: 100%;
+    width: 70%;
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+.view-page__content {
+    display: flex;
+    flex: 1 0 100%;
+    height: calc(100% - 205px);
+}
+
+.view-page__cover {
+    width: 420px;
+    flex: 0 0 420px;
+    height: 350px;
+    background-size: 100% 100%;
+    background-position: center center;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.view-page__text {
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+}
+.view-page__description {
+    padding-left: 40px;
+}
+.view-page__info span {
+    color: red;
+}
+
+.view-page__info p {
+    margin: 0 0 10px;
+}
+
+.view-page__info {
+
+    background-color: gray;
+    flex: 1 0 100%;
+    border-radius: 4px;
+    font-size: 20px;
+    color: white;
+    padding: 20px;
+}
