@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ViewServiceService } from "../service/view-service.service";
 
 @Component({
   selector: 'app-list-view',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-view.component.css']
 })
 export class ListViewComponent implements OnInit {
-
-  constructor() { }
+  films = [];
+  constructor(private viewServiceService: ViewServiceService) { }
 
   ngOnInit() {
+    this.viewServiceService.getFilms().subscribe( films => {
+      this.films = films;
+      // this.films.forEach(item => {
+      //   console.log(item.show)
+      //   this.films = item.show
+      // });
+    });
   }
 
 }

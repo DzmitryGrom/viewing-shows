@@ -9,30 +9,20 @@ import { ViewServiceService } from "../service/view-service.service";
 })
 export class StartPageComponent implements OnInit {
   search: String = '';
-  films = [];
 
   constructor(private router: Router, private viewServiceService: ViewServiceService) { }
 
-  ngOnInit () {
-    this.viewServiceService.getFilms().subscribe( films => {
-      this.films = films;
-      this.films.forEach(item => {
-        console.log(item.show);
-      })
-    });
-
-  }
+  ngOnInit () {}
 
   onClick () {
+    this.viewServiceService.setValue(this.search);
+    this.router.navigateByUrl('/list');
 
-    this.nextRoute();
   }
 
   onEnter(e) {
-    this.nextRoute();
-  }
-
-  nextRoute () {
+    this.viewServiceService.setValue(this.search);
     this.router.navigateByUrl('/list');
   }
+
 }

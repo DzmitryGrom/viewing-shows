@@ -1,5 +1,7 @@
 import {BaseModel} from './base.model';
 
 export class ShowModel extends BaseModel {
-    id: number;
+    image: object;
+    name: string;
+    symmary: string;
 }

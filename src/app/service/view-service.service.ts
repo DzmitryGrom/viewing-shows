@@ -10,7 +10,8 @@ import {map} from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ViewServiceService {
-  search = 'Batman';
+
+  search: String = 'Batman';
   constructor(private http: HttpClient) { }
 
 
@@ -19,5 +20,10 @@ export class ViewServiceService {
           .get<ProjectModel[]>('http://api.tvmaze.com/search/shows?q=' + this.search + '')
           .pipe(map((response) => response.map(model => (new ProjectModel).setAttributes(model)))
           );
+  }
+
+  setValue(value) {
+    console.log(value);
+    this.search = value;
   }
 }

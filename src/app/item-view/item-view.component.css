@@ -33,7 +33,13 @@
     line-height: 1;
     width: 100%;
 }
-.item-view__rating {
+.item-view__rating, .item-view__not-rating {
     font-size: 15px;
+
+}
+.item-view__rating {
     color: gold;
+}
+.item-view__not-rating {
+    color: red;
 }
